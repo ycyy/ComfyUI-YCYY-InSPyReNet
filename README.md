@@ -20,7 +20,7 @@ git clone https://github.com/ycyy/ComfyUI-YCYY-InSPyReNet.git
 cd ComfyUI-YCYY-InSPyReNet
 pip install -r requirements.txt
 ```
-3. Download the model and place it in the 'models/transparent-background' directory.
+3. Download the model and place it in the `models/transparent-background` directory.
 
 |model name| download link|
 |--|--|
