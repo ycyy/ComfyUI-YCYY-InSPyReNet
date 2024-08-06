@@ -4,7 +4,7 @@ ComfyUI node for background removal, implementing InSPyReNet
 
 ## Updates
 * (2024-08-06) add model path,load model from local path
-* (2024-08-06) add model under the `Advanced` node you can choose different models(You need to download and rename the model first).
+* (2024-08-06) add model under the `Advanced` node, you can choose different models(You need to download and rename the model first).
 
 ## Installation
 
