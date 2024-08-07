@@ -74,7 +74,8 @@ class InspyrenetRembgAdvanced:
             },
         }
 
-    RETURN_TYPES = ("IMAGE", "MASK")
+    RETURN_TYPES = ("IMAGE","IMAGE","IMAGE", "MASK")
+    RETURN_NAMES = ("IMAGE","RGBB","RGBW", "MASK")
     FUNCTION = "remove_background_advanced"
     CATEGORY = "YCYY/image"
 
@@ -86,13 +87,19 @@ class InspyrenetRembgAdvanced:
             else:
                 remover = Remover(jit=True,ckpt=ckpt_name)
             img_list = []
+            # img_rgb_list = []
             for img in tqdm(image, "Inspyrenet Rembg"):
                 mid = remover.process(tensor2pil(img), type='rgba', threshold=threshold)
                 out =  pil2tensor(mid)
                 img_list.append(out)
+                # img_rgb_list.append(mid.convert('RGB'))
             img_stack = torch.cat(img_list, dim=0)
+            # img_rgb_stack = torch.cat(img_rgb_list, dim=0)
             mask = img_stack[:, :, :, 3]
-            return (img_stack, mask)
+            image_rgbb = img_stack[:, :, :, :3] * mask.unsqueeze(-1)
+            white_background = torch.ones_like(img_stack[:, :, :, :3])  # 创建全为 1 的白色背景张量
+            image_rgbw = img_stack[:, :, :, :3] * mask.unsqueeze(-1) + (1 - mask.unsqueeze(-1)) * white_background  # 结合原图像和白色背景
+            return (img_stack,image_rgbb,image_rgbw, mask)
         else:
             print("ckpt not found")            
         

@@ -5,7 +5,7 @@ ComfyUI node for background removal, implementing InSPyReNet
 ## Updates
 * (2024-08-06) add model path,load model from local path
 * (2024-08-06) add model under the `Advanced` node, you can choose different models(You need to download and rename the model first).
-
+* (2024-08-07) add RGB image output under the `Advanced` node, you can get a white or black background image without an alpha channel.
 ## Installation
 
 1. Go to your `custom_nodes` folder in ComfyUI, open the terminal and run the following command:
