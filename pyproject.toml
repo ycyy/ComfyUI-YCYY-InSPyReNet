@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-ycyy-inspyrenet"
+description = "ComfyUI node for background removal, implementing InSPyReNet"
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["transparent-background"]
+
+[project.urls]
+Repository = "https://github.com/ycyy/ComfyUI-YCYY-InSPyReNet"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "ycyy"
+DisplayName = "ComfyUI-YCYY-InSPyReNet"
+Icon = ""

@@ -3,6 +3,7 @@
 ComfyUI node for background removal, implementing InSPyReNet
 
 ## Updates
+* (2024-08-16) add to comfy registry now you can install from registry.
 * (2024-08-07) add RGB image output under the `Advanced` node, you can get a white or black background image without an alpha channel.
 * (2024-08-06) add model path,load model from local path
 * (2024-08-06) add model under the `Advanced` node, you can choose different models(You need to download and rename the model first).
